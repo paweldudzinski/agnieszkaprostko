@@ -1,0 +1,49 @@
+/*========================   Menu   ==========================*/
+
+//--------------------------------------------------------------
+//                       Menu Styles
+//--------------------------------------------------------------
+.sf-menu {
+  @include clearfix;
+  display: inline-block;
+
+  > li {
+    position: relative;
+    float: left;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: $mont;
+    & + li {
+      margin-left: 65px;
+    }
+  }
+
+  a {
+    display: block;
+  }
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+//--------------------------------------------------------------
+//                     Menu item styles
+//--------------------------------------------------------------
+.sf-menu {
+  > li {
+    > a {
+      color: map-get($scheme, secondary);
+    }
+
+    &.sfHover > a, > a:hover {
+      color: map-get($scheme, default);
+    }
+
+    &.active > a {
+      color: map-get($scheme, default);
+    }
+  }
+}
+

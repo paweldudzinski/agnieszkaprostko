@@ -1,0 +1,496 @@
+@import "_mixins.scss";
+@import "_variables.scss";
+@import "animate.css";
+// Fonts
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
+@import url(//fonts.googleapis.com/css?family=Montserrat:700|PT+Serif:400italic|PT+Sans:400,700);
+
+$scheme: nth($schemes, 1);
+/*========================================================
+                      Main Styles
+=========================================================*/
+body {
+  color: map-get($scheme, secondary2);
+  font: 400 18px/28px $default-font;
+  -webkit-text-size-adjust: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  font-family: $mont;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 78px;
+  line-height: 80px;
+  letter-spacing: 10.64px;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 55px;
+  letter-spacing: 6.72px;
+}
+
+h3 {
+  font-size: 30px;
+  line-height: 35px;
+  a:hover {
+    color: map-get($scheme, primary);
+  }
+}
+
+h4 {
+  font-size: 25px;
+  line-height: 30px;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+h6 {
+  font-size: 19px;
+  line-height: 20px;
+}
+
+p, .marked-list, .list {
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .fa {
+    text-decoration: none;
+  }
+}
+
+time {
+  display: block;
+  font-family: $default-font;
+  font-weight: 700;
+  line-height: 22px;
+}
+
+a {
+  font: inherit;
+  color: inherit;
+  text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+
+  @include transition(.3s);
+}
+
+a[href^="tel:"],
+a[href^="callto:"] {
+  color: inherit;
+  text-decoration: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+article {
+  border: 2px solid map-get($scheme, secondary2);
+  padding: 32px 37px 40px 28px;
+  @include transition(.3s ease all);
+  h3 {
+    text-align: right;
+    text-transform: none;
+  }
+  &:hover {
+    background: map-get($scheme, default);
+  }
+  @media (min-width: 991px) and (max-width: 1199px),(max-width: 767px) {
+    padding: 32px 37px 40px 15px;
+  }
+
+}
+
+.fa {
+  line-height: inherit;
+}
+
+.primary-color {
+  color: map-get($scheme, primary);
+}
+
+.center {
+  text-align: center;
+}
+
+.img_add {
+  margin-top: 80px;
+}
+
+[class*='fa-'] {
+  &:before {
+    font-weight: 400;
+    font-family: $fa;
+  }
+}
+
+.page {
+  overflow: hidden;
+  min-height: 500px;
+
+  .lt-ie9 & {
+    min-width: 1200px;
+  }
+}
+
+@media (max-width: 991px) {
+  .img_add {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 479px) {
+  h2{
+    font-size: 38px;
+    line-height: 45px;
+  }
+}
+/*=======================================================
+                       Main Layout
+=========================================================*/
+
+* + .row {
+  margin-top: 176px;
+}
+
+* + p {
+  margin-top: 40px;
+}
+
+* + .center {
+  margin-top: 97px;
+}
+
+* + .btn {
+  margin-top: 40px;
+}
+
+* + h3 {
+  margin-top: 78px;
+}
+
+* + .mailform {
+  margin-top: 20px;
+}
+
+time + .off {
+  margin-top: 44px;
+}
+
+.row + .row {
+  margin-top: 210px;
+}
+
+.row + .off {
+  margin-top: 80px;
+}
+
+p.off {
+  margin-top: -8px;
+}
+
+@media (max-width: 1199px) {
+  p.off {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .row + .row {
+    margin-top: 50px;
+  }
+
+  .resp-off {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 479px) {
+  .resp-off_479{
+    margin-top: 30px;
+  }
+}
+
+/*=======================================================
+                        Components
+=========================================================*/
+/*==================     Dash     ======================*/
+.dash {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -75px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 3px;
+    width: 68px;
+    background: map-get($scheme, secondary);
+  }
+}
+
+/*==================     Brand     ======================*/
+.brand {
+  display: inline-block;
+  color: map-get($scheme, default);
+  &_name {
+    margin-top: 67px;
+    overflow: hidden;
+  }
+
+  &_slogan {
+    margin-top: 58px;
+    font-family: $ptserif;
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+/*==================  Backgrounds  ======================*/
+.bg-primary {
+  background: map-get($scheme, primary);
+}
+
+.bg-secondary {
+  background: lighten(saturate(adjust_hue(map-get($scheme, secondary2), 0), 0%), 79.2156862745098%);
+  .row + .row {
+    margin-top: 80px;
+  }
+}
+
+/*===============  Fixed Backgrounds  ===================*/
+.bg-1 {
+  background: url("../images/bg-1.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  h2 {
+    color: map-get($scheme, default);
+  }
+  @media (max-width: 479px) {
+    h2{
+      font-size: 28px;
+      line-height: 37px;
+    }
+  }
+}
+
+.bg-2 {
+  background: url("../images/f-bg.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  h2 {
+    color: map-get($scheme, default);
+    font-size: 48px;
+    line-height: 52px;
+  }
+  p {
+    color: map-get($scheme, default);
+  }
+  @media (max-width: 479px) {
+    h2 {
+      font-size: 28px;
+      line-height: 32px;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .bg-1, .bg-2 {
+    background-attachment: scroll;
+  }
+}
+
+/*==================     Icons     ======================*/
+.fa-phone,
+.fa-map-marker,
+.fa-envelope-o {
+  text-align: center;
+  .wr {
+    display: block;
+    margin-top: 30px;
+  }
+  &:before {
+    display: inline-block;
+    height: 90px;
+    width: 90px;
+    background: lighten(saturate(adjust_hue(map-get($scheme, secondary2), 0), 0%), 79.2156862745098%);
+    font-size: 48px;
+    line-height: 90px;
+    color: map-get($scheme, primary);
+    @include border-radius(50%);
+  }
+  a:hover {
+    color: map-get($scheme, primary);
+  }
+}
+
+.icon {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -91px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 180px;
+    background: url("../images/page-1_img05.png") center 33% no-repeat lighten(saturate(adjust_hue(map-get($scheme, secondary2), 0), 0%), 79.2156862745098%);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+  }
+}
+
+/*==================    Buttons    ======================*/
+.btn {
+  display: inline-block;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: $mont;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: map-get($scheme, secondary2);
+  background: map-get($scheme, secondary);
+  padding: 21px 36px;
+  &:hover {
+    background: map-get($scheme, primary);
+  }
+
+  &:active {
+    background: darken(map-get($scheme, primary), 10%);
+  }
+}
+
+/*==================  Inline List  ======================*/
+.inline-list {
+  li {
+    display: inline-block;
+  }
+
+  li + li {
+    margin-left: 23px;
+  }
+
+  a:hover {
+    color: map-get($scheme, primary);
+  }
+}
+
+//==================    Imports    ======================
+@import "_navbar.scss";
+@import "_stuck-menu.scss";
+@import "_to-top.scss";
+@import "_menu.scss";
+
+/*========================================================
+                     HEADER  Section
+=========================================================*/
+header {
+  background: url("../images/h-bg.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 270px;
+
+  * + .brand {
+    margin-top: 197px;
+  }
+
+  @media (max-width: 767px) {
+    padding-bottom: 110px;
+    * + .brand {
+      margin-top: 60px;
+    }
+  }
+}
+
+/*========================================================
+                     CONTENT  Section
+=========================================================*/
+main {
+  display: block;
+}
+
+/*==================      Well     ======================*/
+.well {
+  padding-top: 160px;
+  padding-bottom: 250px;
+}
+
+.well2 {
+  padding-top: 180px;
+  padding-bottom: 190px;
+}
+
+.well__ins1 {
+  padding-bottom: 160px;
+}
+
+/*========================================================
+                     FOOTER  Styles
+=========================================================*/
+footer {
+  * + .row {
+    margin-top: 73px;
+  }
+  .banner {
+    padding-top: 40px;
+    padding-bottom: 35px;
+    @include clearfix;
+    .inline-list, .copyright {
+      display: inline-block;
+    }
+    .inline-list {
+      float: left;
+      li a {
+        font-size: 24px;
+        line-height: 24px;
+        color: lighten(saturate(adjust_hue(map-get($scheme, secondary2), 0), 0%), 34.509803921568626%);
+        &:hover {
+          color: map-get($scheme, primary);
+        }
+      }
+    }
+    .copyright {
+      float: right;
+      color: lighten(saturate(adjust_hue(map-get($scheme, secondary2), 0), 0%), 34.509803921568626%);
+
+    }
+  }
+  @media (max-width: 479px) {
+    .banner{
+      text-align: center;
+      .inline-list, .copyright {
+        float: none;
+      }
+      .copyright{
+        margin-top: 20px;
+      }
+    }
+  }
+}

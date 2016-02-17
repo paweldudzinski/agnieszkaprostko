@@ -1,0 +1,44 @@
+//========================================================
+//                     Variables
+//=========================================================
+
+$scheme-1: (
+    primary: #2a9c27,
+    secondary: #f2b33a,
+    secondary2: #242424,
+    default: #fff
+);
+
+$scheme-2: (
+    primary: #2196F3,
+        secondary: #66BB6A,
+        secondary2: #242424,
+        default: #fff
+);
+
+$scheme-3: (
+      primary: #D32F2F,
+        secondary: #03A9F4,
+        secondary2: #242424,
+        default: #fff
+);
+
+$scheme-4: (
+      primary: #512DA8,
+        secondary: #FF5252,
+        secondary2: #242424,
+        default: #fff
+);
+
+$scheme-5: (
+      primary: #78909C,
+        secondary: #795548,
+        secondary2: #242424,
+        default: #fff
+);
+
+$schemes: ($scheme-1, $scheme-2, $scheme-3, $scheme-4, $scheme-5);
+
+$default-font:  'PT Sans', sans-serif;
+$ptserif:  'PT Serif', serif;
+$mont: 'Montserrat', sans-serif;

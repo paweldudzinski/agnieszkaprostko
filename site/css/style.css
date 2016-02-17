@@ -805,3 +805,15 @@ footer .banner .copyright {
     margin-top: 20px;
   }
 }
+
+/*========================================================
+                     ADDED  Styles
+=========================================================*/
+
+.bullets {
+  list-style: disc;
+}
+
+.bullets li {
+  margin-left: 20px
+}

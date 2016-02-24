@@ -704,7 +704,7 @@ p.off {
 }
 
 .sf-menu > li > a {
-  color: #f2b33a;
+  color: #0B3966;
 }
 .sf-menu > li.sfHover > a, .sf-menu > li > a:hover {
   color: #000;
@@ -716,6 +716,14 @@ p.off {
 /*========================================================
                      HEADER  Section
 =========================================================*/
+header {
+  background: url("../images/h-bg.jpg") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  padding-top: 45px;
+  padding-bottom: 180px;
+}
 header {
   text-align: center;
   padding-top: 45px;

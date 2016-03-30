@@ -63,6 +63,10 @@ p .fa, .marked-list .fa, .list .fa {
   text-decoration: none;
 }
 
+p, ul {
+	text-align: justify;
+}
+
 time {
   display: block;
   font-family: "PT Sans", sans-serif;
@@ -278,6 +282,21 @@ p.off {
 }
 @media (max-width: 479px) {
   .bg-1 h2 {
+    font-size: 28px;
+    line-height: 37px;
+  }
+}
+
+.bg-3 {
+  background: url("../images/h-bg-s.jpg") no-repeat fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.bg-3 h2 {
+  color: #fff;
+}
+@media (max-width: 479px) {
+  .bg-3 h2 {
     font-size: 28px;
     line-height: 37px;
   }
